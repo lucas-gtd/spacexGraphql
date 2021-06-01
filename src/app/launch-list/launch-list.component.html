@@ -1,0 +1,13 @@
+<div *ngIf="launches$ | async as launches">
+  <div *ngFor="let launch of launches">
+    <h3>{{ launch.rocket.rocket_name }}</h3>
+    <p>{{ launch.launch_date_local }}</p>
+    <p style="color: green" *ngIf="launch.launch_success">Lancement réussi</p>
+    <p style="color: red" *ngIf="!launch.launch_success">Lancement raté</p>
+    <a [href]="launch.links.video_link" target="_blank"
+      >Clisuez pour voir la vidéo</a
+    >
+    <p>Détails: {{ launch.details }}</p>
+    <hr />
+  </div>
+</div>

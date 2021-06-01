@@ -1,0 +1,13 @@
+query getLaunchList($limit: Int!) {
+  launches(limit: $limit) {
+    rocket {
+      rocket_name
+    }
+    launch_date_local
+    launch_success
+    links {
+      video_link
+    }
+    details
+  }
+}
